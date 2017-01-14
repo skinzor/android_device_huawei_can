@@ -158,6 +158,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libcryptfs_hw
 
+# Libshims
+PRODUCT_PACKAGES += \
+    libshims_ims
+
 # Lights
 PRODUCT_PACKAGES += \
     lights.msm8953
