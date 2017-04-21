@@ -22,7 +22,7 @@ $(call inherit-product, device/huawei/can/device.mk)
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
-PRODUCT_NAME := cm_can
+PRODUCT_NAME := lineage_can
 PRODUCT_DEVICE := can
 PRODUCT_BRAND := HUAWEI
 PRODUCT_MODEL := HUAWEI CAN-L11
