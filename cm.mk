@@ -25,7 +25,7 @@ $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 PRODUCT_NAME := cm_can
 PRODUCT_DEVICE := can
 PRODUCT_BRAND := HUAWEI
-PRODUCT_MODEL := HUAWEI CAN-L011
+PRODUCT_MODEL := HUAWEI CAN-L11
 PRODUCT_MANUFACTURER := HUAWEI
 
 PRODUCT_GMS_CLIENTID_BASE := android-huawei
