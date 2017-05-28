@@ -289,6 +289,13 @@ on boot
     chown wifi wifi /sys/class/net/bond0/bonding/queue_id
     start test_diag
 
+    # Touchscreen gestures & glove mode
+    chown system system /sys/touchscreen/easy_wakeup_gesture
+    chmod 0664 /sys/touchscreen/easy_wakeup_gesture
+    chown system system /sys/touchscreen/glove_func/signal_disparity
+    chmode 0664 /sys/touchscreen/glove_func/signal_disparity
+
+
 # msm specific files that need to be created on /data
 on post-fs-data
     #Create directories for Fingerprint
