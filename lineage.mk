@@ -21,6 +21,7 @@ $(call inherit-product, device/huawei/can/device.mk)
 
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
+$(call inherit-product, vendor/cm/config/nfc_enhanced.mk)
 
 PRODUCT_NAME := lineage_can
 PRODUCT_DEVICE := can
