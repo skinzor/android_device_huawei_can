@@ -63,6 +63,10 @@ TARGET_KERNEL_SOURCE := kernel/huawei/msm8953
 TARGET_KERNEL_CONFIG := can_defconfig
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 
+# Power
+TARGET_TAP_TO_WAKE_NODE := /sys/touchscreen/easy_wakeup_gesture
+
+
 # QCOM hardware
 BOARD_USES_QCOM_HARDWARE := true
 
