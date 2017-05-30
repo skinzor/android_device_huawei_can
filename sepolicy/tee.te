@@ -1,1 +1,1 @@
-allow tee system_data_file:file { write open };
+allow tee system_data_file:file open;
