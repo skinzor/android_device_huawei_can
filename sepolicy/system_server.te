@@ -1,0 +1,3 @@
+allow system_server block_device:blk_file { read open };
+allow system_server device:dir { write remove_name };
+allow system_server device:file { getattr unlink open };

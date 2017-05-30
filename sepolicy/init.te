@@ -1,0 +1,3 @@
+allow init block_device:blk_file write;
+allow init self:socket { write read };
+allow init tee_device:chr_file ioctl;

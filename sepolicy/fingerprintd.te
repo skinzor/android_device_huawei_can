@@ -1,0 +1,2 @@
+allow fingerprintd device:chr_file ioctl;
+allow fingerprintd sysfs:file write;
