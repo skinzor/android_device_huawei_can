@@ -859,28 +859,6 @@ service iprenew_p2p /system/bin/dhcpcd -n
     disabled
     oneshot
 
-service ptt_socket_app /system/bin/ptt_socket_app
-    user root
-    group root
-    disabled
-    oneshot
-
-service ptt_ffbm /system/bin/ptt_socket_app -f -d
-    user root
-    group root
-    disabled
-    oneshot
-
-service wifi_ftmd /system/bin/wifi_ftmd
-    user system
-    group system inet net_admin
-    socket wififtmd_server dgram 0660 system system
-    disabled
-    oneshot
-
-on property:wifi.ftmd.load=true
-    insmod /system/lib/modules/pronto/pronto_wlan.ko con_mode=5
-
 service cnss_diag /system/bin/cnss_diag -q -f
     class main
     user root
@@ -1166,21 +1144,6 @@ service RIDL /system/vendor/bin/RIDLClient.exe
     # removed for security team - misc bluetooth radio gps wifi diag media_rw
     # limited to 12 groups.  Unused: audio usb net_bt_admin net_bt_stac net_raw net_admin
 
-# service for USERDEBUG
-service LKCore-dbg /system/vendor/bin/LKCore
-    class late_start
-    oneshot
-    disabled
-    user root
-    group root system log qcom_diag
-
-# service for USER
-service LKCore-rel /system/vendor/bin/LKCore
-    class late_start
-    oneshot
-    disabled
-    user system
-    group system log qcom_diag
 
 # Coresight early boot service
 service cs-early-boot /system/bin/sh /persist/coresight/qdss.agent.sh early-boot /system/etc/init.qcom.debug.sh
@@ -1220,30 +1183,6 @@ on charger
 service libqmi_oem_main /system/bin/libqmi_oem_main
     class main
 
-service wifi_aging /system/xbin/wifi_aging
-    user root
-    disabled
-    oneshot
-
-service wifi_power_off /system/xbin/wifi_power_off
-    user root
-    disabled
-    oneshot
-
-service wlan_detect /system/bin/wlan_detect
-    class main
-    user root
-    group root
-    oneshot
-
-#add poweroffhandler
-service poweroffhandler /system/bin/poweroffhandler
-    class core
-    user media
-    group graphics audio
-    disabled
-    oneshot
-
 # set primary sd directory
 service preparesdservice /system/bin/vdc volume storagetosd
    class main
@@ -1257,12 +1196,6 @@ service fingerprintd /system/bin/fingerprintd
     class late_start
     user system
     group input
-
-service thermal-daemon /system/bin/thermal-daemon
-    class main
-    user system
-    group system
-    seclabel u:r:thermal-daemon:s0
 
 service macaddr /system/bin/mac_addr_normalization
     class late_start
