@@ -1,6 +1,6 @@
 allow untrusted_app adsprpcd:dir getattr;
 allow untrusted_app audiod:dir getattr;
-allow untrusted_app debugfs:file getattr;
+allow untrusted_app debugfs:file { getattr read };
 allow untrusted_app debuggerd:dir getattr;
 allow untrusted_app drmserver:dir getattr;
 allow untrusted_app fingerprintd:dir getattr;

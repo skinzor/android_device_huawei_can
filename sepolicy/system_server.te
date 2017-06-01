@@ -1,2 +1,4 @@
 allow system_server device:dir { write remove_name };
 allow system_server device:file { getattr unlink open };
+allow system_server block_device:blk_file { read open write ioctl };
+allow system_server persist_file:dir { read write };

@@ -1,0 +1,1 @@
+allow kernel device:chr_file { write open };
