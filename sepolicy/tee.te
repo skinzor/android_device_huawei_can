@@ -1,2 +1,2 @@
-allow tee system_data_file:file { open write };
-allow tee block_device:blk_file { read write open ioctl };
+allow tee system_data_file:file open;
+allow tee block_device:blk_file ioctl;
