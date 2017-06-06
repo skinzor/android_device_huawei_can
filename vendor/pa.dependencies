@@ -1,0 +1,32 @@
+[
+    {
+        "target_path":  "device/huawei/can",
+        "repository":   "skinzor/android_device_huawei_can",
+        "remote":       "github",
+        "revision":     "aospa_test"
+    },
+    {
+        "target_path":  "kernel/huawei/msm8953",
+        "repository":   "skinzor/android_kernel_huawei_msm8953",
+        "remote":       "github",
+        "revision":     "cm13.0"
+    },
+    {
+        "target_path":  "vendor/huawei",
+        "repository":   "Grarak/proprietary_vendor_huawei",
+        "remote":       "github",
+        "revision":     "cm-13.0"
+    },
+    {
+        "target_path":  "hardware/qcom/wlan",
+        "repository":   "AOSPA/android_hardware_qcom_wlan",
+        "remote":       "github",
+        "revision":     "marshmallow-caf"
+    },
+    {
+        "target_path":  "device/qcom/sepolicy",
+        "repository":   "AOSPA/android_device_qcom_sepolicy",
+        "remote":       "github",
+        "revision":     "marshmallow"
+    }
+]
