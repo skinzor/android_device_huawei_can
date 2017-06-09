@@ -43,6 +43,10 @@ ro.config.hw_camera_smartae=false
 ro.config.hw_camera_zsl=true
 ro.config.hw_manual_focus=true
 
+# Dual Sim
+ro.telephony.ril.config=simactivation
+persist.radio.multisim.config=dsds
+
 # FRP
 ro.frp.pst=/dev/block/bootdevice/by-name/config
 
