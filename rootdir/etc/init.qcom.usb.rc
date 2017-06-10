@@ -27,7 +27,6 @@ on fs
 # Used to disable USB when switching states
 on property:sys.usb.config=none && property:sys.usb.configfs=0
     stop adbd
-    stop hdbd
     write /sys/class/android_usb/android0/enable 0
     write /sys/class/android_usb/android0/bDeviceClass 0
     setprop sys.usb.state ${sys.usb.config}
@@ -54,32 +53,27 @@ on property:sys.usb.config=mass_storage,adb
     setprop sys.usb.state ${sys.usb.config}
 
 on property:sys.usb.config=mass_storage,hdb
-    stop hdbd
     write /sys/class/android_usb/android0/enable 0
     write /sys/class/android_usb/android0/idVendor 12d1
     write /sys/class/android_usb/android0/idProduct 107d
     write /sys/class/android_usb/android0/iSerial ${ro.serialno}
     write /sys/class/android_usb/android0/functions ${sys.usb.config}
     write /sys/class/android_usb/android0/enable 1
-    start hdbd
     setprop sys.usb.state ${sys.usb.config}
 
 on property:sys.usb.config=mass_storage,adb,hdb
     stop adbd
-    stop hdbd
     write /sys/class/android_usb/android0/enable 0
     write /sys/class/android_usb/android0/idVendor 12d1
     write /sys/class/android_usb/android0/idProduct 107d
     write /sys/class/android_usb/android0/iSerial ${ro.serialno}
     write /sys/class/android_usb/android0/functions ${sys.usb.config}
     write /sys/class/android_usb/android0/enable 1
-    start hdbd
     start adbd
     setprop sys.usb.state ${sys.usb.config}
 
 # /* USB normal mode configuration */
 on property:sys.usb.config=manufacture
-    stop hdbd
     stop adbd
     write /sys/class/android_usb/android0/enable 0
     write /sys/class/android_usb/android0/idVendor 12d1
@@ -89,13 +83,11 @@ on property:sys.usb.config=manufacture
     write /sys/class/android_usb/android0/f_serial/transports ${ro.hw.usb.serial.transport}
     write /sys/class/android_usb/android0/functions serial,diag,adb,hdb
     write /sys/class/android_usb/android0/enable 1
-    start hdbd
     start adbd
     start test_diag
     setprop sys.usb.state ${sys.usb.config}
 
 on property:sys.usb.config=manufacture,adb,hdb
-    stop hdbd
     stop adbd
     write /sys/class/android_usb/android0/enable 0
     write /sys/class/android_usb/android0/idVendor 12d1
@@ -105,14 +97,12 @@ on property:sys.usb.config=manufacture,adb,hdb
     write /sys/class/android_usb/android0/f_serial/transports ${ro.hw.usb.serial.transport}
     write /sys/class/android_usb/android0/functions serial,diag,adb,hdb
     write /sys/class/android_usb/android0/enable 1
-    start hdbd
     start adbd
     start test_diag
     setprop sys.usb.state ${sys.usb.config}
 
 # /* USB factory mode configuration */
 on property:sys.usb.config=manufacture,adb
-    stop hdbd
     stop adbd
     write /sys/class/android_usb/android0/enable 0
     write /sys/class/android_usb/android0/idVendor 12d1
@@ -122,7 +112,6 @@ on property:sys.usb.config=manufacture,adb
     write /sys/class/android_usb/android0/f_serial/transports ${ro.hw.usb.serial.transport}
     write /sys/class/android_usb/android0/functions serial,diag,adb,hdb
     write /sys/class/android_usb/android0/enable 1
-    start hdbd
     start adbd
     start test_diag
     setprop sys.usb.state ${sys.usb.config}
@@ -140,7 +129,6 @@ on property:sys.usb.config=rndis
     setprop sys.usb.state ${sys.usb.config}
 
 on property:sys.usb.config=rndis,hdb
-    stop hdbd
     write /sys/class/android_usb/android0/enable 0
     write /sys/class/android_usb/android0/idVendor 12d1
     write /sys/class/android_usb/android0/idProduct 108a
@@ -149,7 +137,6 @@ on property:sys.usb.config=rndis,hdb
     write /sys/class/android_usb/android0/f_rndis_qc/rndis_transports BAM2BAM_IPA
     write /sys/class/android_usb/android0/functions ${sys.usb.config}
     write /sys/class/android_usb/android0/enable 1
-    start hdbd
     setprop sys.usb.state ${sys.usb.config}
 
 on property:sys.usb.config=rndis,adb
@@ -166,7 +153,6 @@ on property:sys.usb.config=rndis,adb
     setprop sys.usb.state ${sys.usb.config}
 
 on property:sys.usb.config=rndis,adb,hdb
-    stop hdbd
     stop adbd
     write /sys/class/android_usb/android0/enable 0
     write /sys/class/android_usb/android0/idVendor 12d1
@@ -176,7 +162,6 @@ on property:sys.usb.config=rndis,adb,hdb
     write /sys/class/android_usb/android0/f_rndis_qc/rndis_transports BAM2BAM_IPA
     write /sys/class/android_usb/android0/functions ${sys.usb.config}
     write /sys/class/android_usb/android0/enable 1
-    start hdbd
     start adbd
     setprop sys.usb.state ${sys.usb.config}
 
@@ -221,14 +206,12 @@ on property:sys.usb.config=mtp
     setprop sys.usb.state ${sys.usb.config}
 
 on property:sys.usb.config=mtp,hdb
-    stop hdbd
     write /sys/class/android_usb/android0/enable 0
     write /sys/class/android_usb/android0/idVendor 12d1
     write /sys/class/android_usb/android0/idProduct 107d
     write /sys/class/android_usb/android0/iSerial ${ro.serialno}
     write /sys/class/android_usb/android0/functions ${sys.usb.config}
     write /sys/class/android_usb/android0/enable 1
-    start hdbd
     setprop sys.usb.state ${sys.usb.config}
 
 on property:sys.usb.config=mtp,adb
@@ -243,7 +226,6 @@ on property:sys.usb.config=mtp,adb
     setprop sys.usb.state ${sys.usb.config}
 
 on property:sys.usb.config=mtp,adb,hdb
-    stop hdbd
     stop adbd
     write /sys/class/android_usb/android0/enable 0
     write /sys/class/android_usb/android0/idVendor 12d1
@@ -251,7 +233,6 @@ on property:sys.usb.config=mtp,adb,hdb
     write /sys/class/android_usb/android0/iSerial ${ro.serialno}
     write /sys/class/android_usb/android0/functions ${sys.usb.config}
     write /sys/class/android_usb/android0/enable 1
-    start hdbd
     start adbd
     setprop sys.usb.state ${sys.usb.config}
 
@@ -267,7 +248,6 @@ on property:sys.usb.config=ptp
     setprop sys.usb.state ${sys.usb.config}
 
 on property:sys.usb.config=ptp,hdb
-    stop hdbd
     write /sys/class/android_usb/android0/enable 0
     write /sys/class/android_usb/android0/idVendor 12d1
     write /sys/class/android_usb/android0/idProduct 107d
@@ -275,7 +255,6 @@ on property:sys.usb.config=ptp,hdb
     write /sys/class/android_usb/android0/f_mass_storage/lun/file /system/cdrom/autorun.iso
     write /sys/class/android_usb/android0/functions ptp,mass_storage,hdb
     write /sys/class/android_usb/android0/enable 1
-    start hdbd
     setprop sys.usb.state ${sys.usb.config}
 
 on property:sys.usb.config=ptp,adb
@@ -291,7 +270,6 @@ on property:sys.usb.config=ptp,adb
     setprop sys.usb.state ${sys.usb.config}
 
 on property:sys.usb.config=ptp,adb,hdb
-    stop hdbd
     stop adbd
     write /sys/class/android_usb/android0/enable 0
     write /sys/class/android_usb/android0/idVendor 12d1
@@ -300,7 +278,6 @@ on property:sys.usb.config=ptp,adb,hdb
     write /sys/class/android_usb/android0/f_mass_storage/lun/file /system/cdrom/autorun.iso
     write /sys/class/android_usb/android0/functions ptp,mass_storage,adb,hdb
     write /sys/class/android_usb/android0/enable 1
-    start hdbd
     start adbd
     setprop sys.usb.state ${sys.usb.config}
 
@@ -317,7 +294,6 @@ on property:sys.usb.config=nmea,serial
     setprop sys.usb.state ${sys.usb.config}
 
 on property:sys.usb.config=nmea,serial,adb
-    stop hdbd
     stop adbd
     write /sys/class/android_usb/android0/enable 0
     write /sys/class/android_usb/android0/idVendor 12d1
@@ -327,7 +303,6 @@ on property:sys.usb.config=nmea,serial,adb
     write /sys/class/android_usb/android0/f_serial/transports smd,tty
     write /sys/class/android_usb/android0/functions serial,diag,adb,hdb
     write /sys/class/android_usb/android0/enable 1
-    start hdbd
     start adbd
     start test_diag
     setprop sys.usb.state ${sys.usb.config}
@@ -388,7 +363,6 @@ on property:sys.usb.config=hisuite,mtp,mass_storage,adb
     setprop sys.usb.state ${sys.usb.config}
 
 on property:sys.usb.config=hisuite,mtp,mass_storage,hdb
-    stop hdbd
     write /sys/class/android_usb/android0/enable 0
     write /sys/class/android_usb/android0/idVendor 12d1
     write /sys/class/android_usb/android0/idProduct 107d
@@ -396,12 +370,10 @@ on property:sys.usb.config=hisuite,mtp,mass_storage,hdb
     write /sys/class/android_usb/android0/f_mass_storage/lun/file /system/cdrom/autorun.iso
     write /sys/class/android_usb/android0/functions mtp,mass_storage,hdb
     write /sys/class/android_usb/android0/enable 1
-    start hdbd
     setprop sys.usb.state ${sys.usb.config}
 
 on property:sys.usb.config=hisuite,mtp,mass_storage,adb,hdb
     stop adbd
-    stop hdbd
     write /sys/class/android_usb/android0/enable 0
     write /sys/class/android_usb/android0/idVendor 12d1
     write /sys/class/android_usb/android0/idProduct 107d
@@ -410,7 +382,6 @@ on property:sys.usb.config=hisuite,mtp,mass_storage,adb,hdb
     write /sys/class/android_usb/android0/functions mtp,mass_storage,adb,hdb
     write /sys/class/android_usb/android0/enable 1
     start adbd
-    start hdbd
     setprop sys.usb.state ${sys.usb.config}
 
 # adb only USB configuration
@@ -487,18 +458,6 @@ on property:sys.usb.config=accessory,audio_source,adb && property:sys.usb.config
 on property:persist.sys.usb.config=*
     usb_config_check
     setprop sys.usb.config ${persist.sys.usb.config}
-
-# /* to process the usb port switch uevent*/
-service hw_ueventd /sbin/hw_ueventd
-    class main
-    seclabel u:r:hw_ueventd:s0
-
-#service hdbd /sbin/hdbd
-service hdbd /sbin/hdbd --root_seclabel=u:r:su:s0
-    class core
-    socket hdbd stream 660 system system
-    disabled
-    seclabel u:r:adbd:s0
 
 #
 # USB type C
