@@ -142,6 +142,7 @@ PRODUCT_PACKAGES += \
     libnfc \
     libnfc_jni \
     nfc_nci.pn54x.default \
+    nfc_nci.pn55x.default \
     NfcNci \
     Tag \
     com.android.nfc_extras
