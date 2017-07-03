@@ -800,11 +800,15 @@ bin/libqmi_oem_main
 # Media
 lib/libOmxVpp.so
 lib/libvpplibrary.so
+vendor/lib/libc2dcolorconvert.so
+vendor/lib64/libc2dcolorconvert.so
 vendor/lib/libI420colorconvert.so
+vendor/lib64/libI420colorconvert.so
 vendor/lib/libOmxAacDec.so
 vendor/lib/libOmxEvrcDec.so
 vendor/lib/libOmxQcelp13Dec.so
 vendor/lib/libmm-color-convertor.so
+vendor/lib64/libmm-color-convertor.so
 vendor/lib/libmmosal.so
 vendor/lib/libvqzip.so
 
@@ -832,6 +836,11 @@ bin/pm-proxy
 bin/pm-service
 vendor/lib/libperipheral_client.so
 vendor/lib64/libperipheral_client.so
+
+# Postprocessing
+bin/mm-pp-daemon
+vendor/lib/libdisp-aba.so
+vendor/lib64/libdisp-aba.so
 
 # QMI
 bin/irsc_util
