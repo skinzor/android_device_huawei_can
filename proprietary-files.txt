@@ -6,17 +6,21 @@ vendor/lib/libfastcvadsp_stub.so
 vendor/lib/libfastcvopt.so
 vendor/lib64/libadsp_default_listener.so
 vendor/lib64/libadsprpc.so
+vendor/lib64/libfastcvadsp_stub.so
+vendor/lib64/libfastcvopt.so
 
 # ADSP modules
+vendor/lib/rfsa/adsp/libFastRPC_AUE_Forward_skel.so
+vendor/lib/rfsa/adsp/libFastRPC_UTF_Forward_skel.so
+vendor/lib/rfsa/adsp/libapps_mem_heap.so
+vendor/lib/rfsa/adsp/libdspCV_skel.so
 vendor/lib/rfsa/adsp/libfastcvadsp.so
 vendor/lib/rfsa/adsp/libfastcvadsp_skel.so
-vendor/lib/rfsa/adsp/libscveT2T_skel.so
-vendor/lib/rfsa/adsp/libdspCV_skel.so
-vendor/lib/rfsa/adsp/libapps_mem_heap.so
 vendor/lib/rfsa/adsp/libobjectMattingApp_skel.so
-vendor/lib/rfsa/adsp/libscveCleverCapture_skel.so
 vendor/lib/rfsa/adsp/libscveBlobDescriptor_skel.so
+vendor/lib/rfsa/adsp/libscveCleverCapture_skel.so
 vendor/lib/rfsa/adsp/libscveObjectSegmentation_skel.so
+vendor/lib/rfsa/adsp/libscveT2T_skel.so
 vendor/lib/rfsa/adsp/libscveTextReco_skel.so
 
 # Audio
@@ -651,6 +655,53 @@ etc/firmware/cpp_firmware_v1_5_0.fw
 etc/firmware/cpp_firmware_v1_5_2.fw
 etc/firmware/cpp_firmware_v1_6_0.fw
 etc/firmware/cpp_firmware_v1_8_0.fw
+
+# Charger
+bin/hvdcp_opti
+
+# CNE
+-priv-app/CNEService/CNEService.apk
+bin/cnd
+etc/cne/SwimConfig.xml
+etc/cne/andsfCne.xml
+etc/permissions/ConnectivityExt.xml
+etc/permissions/cneapiclient.xml
+etc/permissions/com.quicinc.cne.xml
+framework/ConnectivityExt.jar
+framework/cneapiclient.jar
+framework/com.quicinc.cne.jar
+vendor/lib/libcne.so
+vendor/lib/libcneapiclient.so
+vendor/lib/libcneqmiutils.so
+vendor/lib/libvendorconn.so
+vendor/lib/libwqe.so
+vendor/lib/libxml.so
+vendor/lib64/libcne.so
+vendor/lib64/libcneapiclient.so
+vendor/lib64/libcneqmiutils.so
+vendor/lib64/libvendorconn.so
+vendor/lib64/libwqe.so
+vendor/lib64/libxml.so
+
+# DPM
+bin/dpmd
+etc/dpm/dpm.conf
+etc/dpm/nsrm/NsrmConfiguration.xml
+etc/permissions/com.qti.dpmframework.xml
+etc/permissions/dpmapi.xml
+framework/com.qti.dpmframework.jar
+framework/dpmapi.jar
+framework/tcmclient.jar
+vendor/lib/libdpmctmgr.so
+vendor/lib/libdpmfdmgr.so
+vendor/lib/libdpmframework.so
+vendor/lib/libdpmnsrm.so
+vendor/lib/libdpmtcm.so
+vendor/lib64/libdpmctmgr.so
+vendor/lib64/libdpmfdmgr.so
+vendor/lib64/libdpmframework.so
+vendor/lib64/libdpmnsrm.so
+vendor/lib64/libdpmtcm.so
 
 # DRM
 bin/qseecomd
