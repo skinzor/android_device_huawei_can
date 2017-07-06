@@ -135,6 +135,9 @@ lib/libmm-qcamera.so
 lib/libmmcamera_interface.so
 lib/libmmjpeg_interface.so
 lib/libmorpho_effect_library5.so
+lib/libjni_morpho_filters.so
+lib/libmorpho_memory_allocator.so
+lib/libmorpho_panorama_gp.so
 lib/libmrc_cg_beauty.so
 lib/libmrc_cg_filters.so
 lib/libmrc_cg_ldc.so
@@ -855,6 +858,10 @@ vendor/lib/libconnctrl.so
 vendor/lib64/libconnctrl.so
 vendor/lib64/libQtiTether.so
 
+# NFC
+vendor/firmware/libpn548ad_fw.so
+vendor/firmware/libpn551_fw.so
+
 # Perf
 bin/energy-awareness
 bin/iop
@@ -1008,6 +1015,11 @@ etc/firmware/milan_ctc_fw.img
 etc/firmware/milan_jdi_fw.img
 etc/firmware/milan_tianma_ft8716_fw.bin
 etc/firmware/milan_tianma_fw.img
+
+# Widevine
+vendor/lib/libWVStreamControlAPI_L3.so
+vendor/lib/libwvdrm_L3.so
+vendor/lib/mediadrm/libwvdrmengine.so
 
 # Wifi
 bin/cnss-daemon
