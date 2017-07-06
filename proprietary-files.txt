@@ -108,6 +108,7 @@ vendor/lib64/soundfx/libqcvirt.so
 
 # Bluetooth
 bin/btnvtool
+bin/dun-server
 bin/hci_qcomm_init
 bin/mac_addr_normalization
 bin/oeminfo_nvm_server
@@ -117,6 +118,7 @@ lib64/libbtaddr.so
 lib64/libbtpower.so
 lib64/libhuawei_secure.so
 vendor/lib/libbtnv.so
+vendor/lib64/libCommandSvc.so
 vendor/lib64/libbtnv.so
 
 # Camera
@@ -683,6 +685,9 @@ vendor/lib64/libvendorconn.so
 vendor/lib64/libwqe.so
 vendor/lib64/libxml.so
 
+# Display calibration
+-etc/qdcm_calib_data_JDI_SD6FA1_5P0_1080P_VIDEO.xml
+
 # DPM
 bin/dpmd
 etc/dpm/dpm.conf
@@ -707,7 +712,9 @@ vendor/lib64/libdpmtcm.so
 bin/qseecomd
 vendor/bin/qseeproxydaemon
 vendor/lib/libQSEEComAPI.so
+vendor/lib/libcppf.so
 vendor/lib64/lib-sec-disp.so
+vendor/lib64/libGPTEE.so
 vendor/lib64/libGPreqcancel.so
 vendor/lib64/libGPreqcancel_svc.so
 vendor/lib64/libQSEEComAPI.so
@@ -719,7 +726,9 @@ vendor/lib64/libqisl.so
 vendor/lib64/librpmb.so
 vendor/lib64/libsecureui.so
 vendor/lib64/libsecureui_svcsock.so
+vendor/lib64/libsecureuisvc_jni.so
 vendor/lib64/libssd.so
+vendor/lib64/libtzdrmgenprov.so
 
 # Fingerprint
 bin/teecd
@@ -733,7 +742,6 @@ vendor/lib/hw/gatekeeper.msm8953.so
 vendor/lib64/hw/gatekeeper.msm8953.so
 
 # Graphics
-vendor/bin/mm-pp-dpps
 vendor/lib/egl/eglSubDriverAndroid.so
 vendor/lib/egl/libEGL_adreno.so
 vendor/lib/egl/libGLESv1_CM_adreno.so
@@ -759,6 +767,7 @@ vendor/lib/libmmQSM.so
 vendor/lib/librs_adreno.so
 vendor/lib/librs_adreno_sha1.so
 vendor/lib/libscalar.so
+vendor/lib/libscale.so
 vendor/lib/libsd_sdk_display.so
 vendor/lib/libsdm-color.so
 vendor/lib/libsdm-diag.so
@@ -784,11 +793,13 @@ vendor/lib64/libgsl.so
 vendor/lib64/libllvm-glnext.so
 vendor/lib64/libllvm-qcom.so
 vendor/lib64/libmm-disp-apis.so
+vendor/lib64/libmm-hdcpmgr.so
 vendor/lib64/libmm-qdcm.so
 vendor/lib64/libmmQSM.so
 vendor/lib64/librs_adreno.so
 vendor/lib64/librs_adreno_sha1.so
 vendor/lib64/libscalar.so
+vendor/lib64/libscale.so
 vendor/lib64/libsd_sdk_display.so
 vendor/lib64/libsdm-color.so
 vendor/lib64/libsdm-diag.so
@@ -891,24 +902,70 @@ vendor/lib64/hw/keystore.msm8953.so
 # Lights
 bin/libqmi_oem_main
 
+# Listen
+vendor/lib/hw/sound_trigger.primary.msm8953.so
+vendor/lib/libadpcmdec.so
+vendor/lib/libsmwrapper.so
+
 # Media
 lib/libOmxVpp.so
+lib/libstagefright_soft_flacdec.so
 lib/libvpplibrary.so
-vendor/lib/libc2dcolorconvert.so
-vendor/lib64/libc2dcolorconvert.so
+vendor/lib/libAlacSwDec.so
+vendor/lib/libApeSwDec.so
+vendor/lib/libFlacSwDec.so
 vendor/lib/libI420colorconvert.so
-vendor/lib64/libI420colorconvert.so
 vendor/lib/libOmxAacDec.so
+vendor/lib/libOmxAlacDec.so
+vendor/lib/libOmxAlacDecSw.so
+vendor/lib/libOmxAmrwbplusDec.so
+vendor/lib/libOmxApeDec.so
+vendor/lib/libOmxApeDecSw.so
 vendor/lib/libOmxEvrcDec.so
+vendor/lib/libOmxMux.so
+vendor/lib/libOmxQcelp13Dec.so
+vendor/lib/libOmxWmaDec.so
 vendor/lib/libOmxQcelp13Dec.so
 vendor/lib/libmm-color-convertor.so
-vendor/lib64/libmm-color-convertor.so
 vendor/lib/libmmosal.so
+vendor/lib/libmmsw_detail_enhancement.so
+vendor/lib/libmmsw_math.so
+vendor/lib/libmmsw_opencl.so
+vendor/lib/libmmsw_platform.so
 vendor/lib/libvqzip.so
+lib64/libOmxVpp.so
+lib64/libstagefright_soft_flacdec.so
+lib64/libvpplibrary.so
+vendor/lib64/libAlacSwDec.so
+vendor/lib64/libApeSwDec.so
+vendor/lib64/libFlacSwDec.so
+vendor/lib64/libI420colorconvert.so
+vendor/lib64/libOmxAacDec.so
+vendor/lib64/libOmxAlacDec.so
+vendor/lib64/libOmxAlacDecSw.so
+vendor/lib64/libOmxAmrwbplusDec.so
+vendor/lib64/libOmxApeDec.so
+vendor/lib64/libOmxApeDecSw.so
+vendor/lib64/libOmxEvrcDec.so
+vendor/lib64/libOmxMux.so
+vendor/lib64/libOmxQcelp13Dec.so
+vendor/lib64/libOmxWmaDec.so
+vendor/lib64/libOmxQcelp13Dec.so
+vendor/lib64/libmm-color-convertor.so
+vendor/lib64/libmmosal.so
+vendor/lib64/libmmsw_detail_enhancement.so
+vendor/lib64/libmmsw_math.so
+vendor/lib64/libmmsw_opencl.so
+vendor/lib64/libmmsw_platform.so
+
+# Modem
+vendor/lib/libwms.so
+vendor/lib64/libwms.so
 
 # Network
 #-priv-app/QtiTetherService/QtiTetherService.apk|1f4c07ac5b46914f1ce732266ae2f14dc2f9b61d
 vendor/lib/libconnctrl.so
+vendor/lib/libQtiTether.so
 vendor/lib64/libconnctrl.so
 vendor/lib64/libQtiTether.so
 
@@ -923,9 +980,13 @@ bin/msm_irqbalance
 lib64/libqti-iop.so
 vendor/bin/perfd
 vendor/lib/libqc-opt.so
+vendor/lib/libqti-at.so
+vendor/lib/libqti-gt.so
 vendor/lib/libqti-iop-client.so
 vendor/lib/libqti-perfd-client.so
 vendor/lib64/libqc-opt.so
+vendor/lib64/libqti-at.so
+vendor/lib64/libqti-gt.so
 vendor/lib64/libqti-iop-client.so
 vendor/lib64/libqti-perfd-client.so
 
@@ -936,6 +997,8 @@ vendor/lib/libperipheral_client.so
 vendor/lib64/libperipheral_client.so
 
 # Postprocessing
+framework/com.qti.snapdragon.sdk.display.jar
+vendor/bin/mm-pp-dpps
 bin/mm-pp-daemon
 vendor/lib/libdisp-aba.so
 vendor/lib64/libdisp-aba.so
@@ -991,15 +1054,20 @@ vendor/lib64/libsmemlog.so
 bin/hvdcp_opti
 
 # Radio
+
 -app/shutdownlistener/shutdownlistener.apk|a4f715eea03bb1518f3a12536eaafa1ab78f58f9
 bin/netmgrd
+bin/port-bridge
 bin/qmuxd
 bin/radish
 bin/rmt_storage
+bin/tftp_server
 etc/data/dsi_config.xml
 etc/data/netmgr_config.xml
 etc/data/qmi_config.xml
+etc/permissions/embms.xml
 etc/permissions/qcrilhook.xml
+framework/embmslibrary.jar
 -framework/qcnvitems.jar|61aecee0b2fb2177ffa21d688bd241e6eaa60a5e
 -framework/qcrilhook.jar|3d69b8681bb236c7f30fa750f4c9b6783d27e248
 lib/libhuaweicust.so
@@ -1009,11 +1077,11 @@ lib64/libhuaweicust.so
 lib64/libhw_hal.so
 lib64/liboeminfo.so
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk|f5d675e510436ceebe3a9d3deec3f39f5642a2af
-vendor/lib/libcneapiclient.so
+vendor/bin/qti
 vendor/lib/libconfigdb.so
+vendor/lib/liblqe.so
 -vendor/lib/libmdmdetect.so
-vendor/lib/libxml.so
-vendor/lib64/libcneapiclient.so
+vendor/lib/libnetmgr.so
 vendor/lib64/libconfigdb.so
 vendor/lib64/liblqe.so
 -vendor/lib64/libmdmdetect.so
@@ -1023,7 +1091,7 @@ vendor/lib64/libril-qc-qmi-1.so
 vendor/lib64/libril-qc-radioconfig.so
 vendor/lib64/libril-qcril-hook-oem.so
 vendor/lib64/libsystem_health_mon.so
-vendor/lib64/libxml.so
+vendor/qcril.db
 
 # Sensors
 bin/sensors.qcom
@@ -1033,12 +1101,14 @@ vendor/lib/hw/activity_recognition.msm8953.so
 vendor/lib/libcalmodule_common.so
 vendor/lib/libsensor_reg.so
 vendor/lib/libsensor1.so
+vendor/lib/sensor_calibrate.so
 vendor/lib/sensors.nosensorhub.so
 vendor/lib/sensors.ssc.so
 vendor/lib64/hw/activity_recognition.msm8953.so
 vendor/lib64/libcalmodule_common.so
 vendor/lib64/libsensor_reg.so
 vendor/lib64/libsensor1.so
+vendor/lib64/sensor_calibrate.so
 vendor/lib64/sensors.nosensorhub.so
 vendor/lib64/sensors.ssc.so
 

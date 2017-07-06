@@ -326,6 +326,14 @@ on post-fs-data
     mkdir /data/misc/dhcp 0770 dhcp dhcp
     chown dhcp dhcp /data/misc/dhcp
 
+    #create port-bridge log dir
+    mkdir /data/misc/port_bridge 0770 radio radio
+    chmod 0770 /data/misc/port_bridge
+
+    #create netmgr log dir
+    mkdir /data/misc/netmgr 0770 radio radio
+    chmod 0770 /data/misc/netmgr
+
     # Create the directories used by CnE subsystem
     mkdir /data/connectivity 0771 system system
     chown system system /data/connectivity
@@ -583,6 +591,10 @@ service rmt_storage /system/bin/rmt_storage
     class core
     user root
 
+service tftp_server /system/bin/tftp_server
+   class main
+   user root
+
 service config_bt_addr /system/bin/btnvtool -O
     class core
     user bluetooth
@@ -641,6 +653,12 @@ service bridgemgrd /system/bin/bridgemgrd
     group radio qcom_diag
     disabled
 
+service port-bridge /system/bin/port-bridge
+    class main
+    user radio system
+    group radio system inet
+    oneshot
+
 # QMUX must be in multiple groups to support external process connections
 service qmuxd /system/bin/qmuxd
     class main
@@ -650,6 +668,19 @@ service qmuxd /system/bin/qmuxd
 
 service netmgrd /system/bin/netmgrd
     class main
+    disabled
+
+service ipacm-diag /system/bin/ipacm-diag
+    class main
+    user system
+    socket ipacm_log_file dgram 660 system net_admin
+    group net_admin qcom_diag
+    disabled
+
+service ipacm /system/bin/ipacm
+    class main
+    user net_admin
+    group net_admin inet
     disabled
 
 service qti /system/vendor/bin/qti
@@ -880,6 +911,11 @@ service preparesdservice /system/bin/vdc volume storagetosd
 
 on property:persist.sys.primarysd=*
    start preparesdservice
+
+service teecd /system/bin/teecd
+    class core
+    user root
+    seclabel u:r:tee:s0
 
 service fingerprintd /system/bin/fingerprintd
     class late_start
