@@ -99,10 +99,6 @@ PRODUCT_PACKAGES += \
     memtrack.msm8953 \
     libtinyxml
 
-# DRM
-PRODUCT_PACKAGES += \
-    libshims_wvm
-
 # Fingerprint
 PRODUCT_PACKAGES += \
     fingerprintd
@@ -176,7 +172,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/nfc/libnfc_brcm_mla.conf:system/etc/libnfc_brcm_mla.conf \
     $(LOCAL_PATH)/nfc/libnfc_nxp_mla.conf:system/etc/libnfc_nxp_mla.conf
 
- 
 # OMX
 PRODUCT_PACKAGES += \
     libc2dcolorconvert \
