@@ -112,6 +112,8 @@ USE_OPENGL_RENDERER := true
 MAX_EGL_CACHE_KEY_SIZE := 12*1024
 MAX_EGL_CACHE_SIZE := 2048*1024
 OVERRIDE_RS_DRIVER:= libRSDriver_adreno.so
+MAX_VIRTUAL_DISPLAY_DIMENSION := 4096
+TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
 
 # Enable dexpreopt to speed boot time
 ifeq ($(HOST_OS),linux)
@@ -123,7 +125,7 @@ ifeq ($(HOST_OS),linux)
 endif
 
 # FM
-AUDIO_FEATURE_ENABLED_FM := true
+AUDIO_FEATURE_ENABLED_FM_POWER_OPT := true
 BOARD_HAVE_QCOM_FM := true
 TARGET_QCOM_NO_FM_FIRMWARE := true
 
@@ -137,11 +139,11 @@ TARGET_PROVIDES_LIBLIGHT := true
 MALLOC_SVELTE := true
 
 # Media
-TARGET_USES_MEDIA_EXTENSIONS := true
+# TARGET_USES_MEDIA_EXTENSIONS := true
 
 # NFC
 BOARD_NFC_CHIPSET := pn551
-BOARD_NFC_DEVICE := "/dev/pn544"
+TARGET_USES_NQ_NFC := true
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 83886080
@@ -157,7 +159,7 @@ TARGET_POWERHAL_VARIANT := qcom
 
 # QCOM hardware
 BOARD_USES_QCOM_HARDWARE := true
-TARGET_USE_SDCLANG := true
+# TARGET_USE_SDCLANG := true
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(PLATFORM_PATH)/rootdir/etc/fstab.qcom
@@ -177,6 +179,11 @@ USE_SENSOR_MULTI_HAL := true
 # Timeservice
 BOARD_USES_QC_TIME_SERVICES := true
 
+# TWRP Support - Optional
+ifeq ($(WITH_TWRP),true)
+-include $(PLATFORM_PATH)/twrp.mk
+endif
+
 # Wifi
 BOARD_HAS_QCOM_WLAN := true
 BOARD_HAS_QCOM_WLAN_SDK := true
@@ -193,33 +200,3 @@ TARGET_USES_WCNSS_CTRL := true
 
 # inherit from the proprietary version
 -include vendor/huawei/can/BoardConfigVendor.mk
-
-# TWRP
-# Display
-TW_THEME := portrait_hdpi
-#RECOVERY_GRAPHICS_USE_LINELENGTH := true
-#TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
-TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
-TW_MAX_BRIGHTNESS := 255
-TW_DEFAULT_BRIGHTNESS := 150
-TW_INPUT_BLACKLIST := "hbtp_vm"
-
-# Keys
-BOARD_HAS_NO_SELECT_BUTTON := true
-
-# Storage
-# RECOVERY_VARIANT := twrp
-BOARD_SUPPRESS_SECURE_ERASE := true
-TW_DEFAULT_EXTERNAL_STORAGE := true
-TW_INTERNAL_STORAGE_PATH := "/data/media"
-TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
-TW_EXTERNAL_STORAGE_PATH := "/external_sd"
-TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sd"
-TW_MTP_DEVICE := "/dev/mtp_usb"
-BOARD_MTP_DEVICE := "/dev/mtp_usb"
-RECOVERY_SDCARD_ON_DATA := true
-
-# Misc.
-#BOARD_INCLUDE_CRYPTO := true
-BOARD_RECOVERY_SWIPE := true
-TW_DEFAULT_LANGUAGE := en-US

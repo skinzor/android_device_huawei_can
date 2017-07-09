@@ -105,9 +105,8 @@ PRODUCT_PACKAGES += \
 
 # FM
 PRODUCT_PACKAGES += \
-    qcom.fmradio \
-    libqcomfm_jni \
-    FM2
+    FMRadio \
+    libfmjni
 
 # IPv6
 PRODUCT_PACKAGES += \
@@ -155,13 +154,12 @@ PRODUCT_COPY_FILES += \
     vendor/cm/config/permissions/com.cyanogenmod.nfc.enhanced.xml:system/etc/permissions/com.cyanogenmod.nfc.enhanced.xml
 
 PRODUCT_PACKAGES += \
+    com.android.nfc_extras \
     libnfc-nci \
-    libnfc_nci_jni \
     nfc_nci.pn54x.default \
     nfc_nci.pn55x.default \
     NfcNci \
     Tag \
-    com.android.nfc_extras
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/nfc/libnfc_brcm_can.conf:system/etc/libnfc_brcm_can.conf \
@@ -172,15 +170,14 @@ PRODUCT_COPY_FILES += \
 # OMX
 PRODUCT_PACKAGES += \
     libc2dcolorconvert \
-    libextmedia_jni \
     libOmxAacEnc \
     libOmxAmrEnc \
     libOmxCore \
     libOmxEvrcEnc \
     libOmxQcelp13Enc \
+    libOmxSwVencHevc \
     libOmxVdec \
     libOmxVenc \
-    libOmxVidcCommon \
     libstagefrighthw
 
 # Power

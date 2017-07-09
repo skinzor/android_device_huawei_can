@@ -57,8 +57,7 @@ on early-boot
 
     # Support legacy paths
     symlink /sdcard /mnt/sdcard
-    #symlink /storage/sdcard0 /sdcard
-    symlink /storage/self/primary /storage/sdcard0
+    symlink /sdcard /storage/sdcard0
 
 on boot
     # add for fingerprint
