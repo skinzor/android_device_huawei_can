@@ -1,4 +1,4 @@
-﻿/*
+/*
  *
  *  Copyright (c) 2013, The Linux Foundation. All rights reserved.
  *  Not a Contribution, Apache license notifications and license are retained
@@ -21,6 +21,7 @@
 
 #ifndef _BDROID_BUILDCFG_H
 #define _BDROID_BUILDCFG_H
+#define BTM_DEF_LOCAL_NAME   "HUAWEI Nova"
 // Disables read remote device feature
 #define BTA_SKIP_BLE_READ_REMOTE_FEAT FALSE
 #define MAX_ACL_CONNECTIONS    7
@@ -29,5 +30,7 @@
 // skips conn update at conn completion
 #define BTA_BLE_SKIP_CONN_UPD  FALSE
 #define BLE_PERIPHERAL_ADV_NAME  FALSE
+#define BTM_LE_SECURE_CONN  TRUE
 #define BT_CLEAN_TURN_ON_DISABLED 1
 #endif
+
