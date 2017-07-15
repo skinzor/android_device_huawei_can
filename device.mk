@@ -189,10 +189,8 @@ PRODUCT_PACKAGES += \
     Tag \
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/nfc/libnfc_brcm_can.conf:system/etc/libnfc_brcm_can.conf \
-    $(LOCAL_PATH)/nfc/libnfc_nxp_can.conf:system/etc/libnfc_nxp_can.conf \
-    $(LOCAL_PATH)/nfc/libnfc_brcm_mla.conf:system/etc/libnfc_brcm_mla.conf \
-    $(LOCAL_PATH)/nfc/libnfc_nxp_mla.conf:system/etc/libnfc_nxp_mla.conf
+    $(LOCAL_PATH)/nfc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
+    $(LOCAL_PATH)/nfc/libnfc-nxp.conf:system/etc/libnfc-nxp.conf
 
 # OMX
 PRODUCT_PACKAGES += \
