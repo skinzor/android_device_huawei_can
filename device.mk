@@ -184,7 +184,6 @@ PRODUCT_PACKAGES += \
     com.android.nfc_extras \
     libnfc-nci \
     nfc_nci.pn54x.default \
-    nfc_nci.pn55x.default \
     NfcNci \
     Tag \
 
@@ -195,9 +194,8 @@ PRODUCT_COPY_FILES += \
 # OMX
 PRODUCT_PACKAGES += \
     libc2dcolorconvert \
-    libdashplayer \
-    libdivxdrmdecrypt \
     libextmedia_jni \
+    libqcmediaplayer \
     libOmxAacEnc \
     libOmxAmrEnc \
     libOmxCore \
@@ -206,6 +204,7 @@ PRODUCT_PACKAGES += \
     libOmxSwVencHevc \
     libOmxVdec \
     libOmxVenc \
+    libOmxVidcCommon \
     libstagefrighthw
 
 # Power
@@ -234,6 +233,7 @@ PRODUCT_PACKAGES += \
 # RIL
 PRODUCT_PACKAGES += \
     librmnetctl \
+    libcnefeatureconfig \
     libxml2
 
 # Sensors
