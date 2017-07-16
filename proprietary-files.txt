@@ -822,22 +822,23 @@ etc/firmware/a530v3_gpmu.fw2
 etc/firmware/a530v3_seq.fw2
 
 # Gps
-bin/loc_launcher
-etc/flp.conf
-etc/gps.conf
-etc/izat.conf
-etc/lowi.conf
-etc/permissions/com.qti.location.sdk.xml
-etc/permissions/com.qualcomm.location.xml
-etc/sap.conf
-etc/xtwifi.conf
 framework/com.qti.location.sdk.jar|6a01b9a0b28a468670c99c6b923b8637065b82b2
+-priv-app/com.qualcomm.location/com.qualcomm.location.apk|84cc59178f2b55767c01497ff4484bf182507d08
+bin/garden_app
+bin/loc_launcher
+bin/lowi-server
+bin/xtwifi-client
+bin/xtwifi-inet-agent
+etc/permissions/com.qti.location.sdk.xml
+etc/permissions/com.qualcomm.location.vzw_library.xml
+etc/permissions/com.qualcomm.location.xml
+etc/xtra_root_cert.pem
+framework/com.qualcomm.location.vzw_library.jar
 lib/libgps.utils.so
 -lib/libloc_api_v02.so
 lib/libloc_ds_api.so
 lib64/libloc_ds_api.so
 lib64/libloc_api_v02.so
--priv-app/com.qualcomm.location/com.qualcomm.location.apk|84cc59178f2b55767c01497ff4484bf182507d08
 vendor/bin/slim_daemon
 vendor/lib/hw/flp.default.so
 vendor/lib/libalarmservice_jni.so
@@ -960,6 +961,11 @@ vendor/lib64/libconnctrl.so
 vendor/lib64/libQtiTether.so
 
 # NFC
+lib/libnfc-nci-44-551.so
+lib/libnfc_nci_jni_44_551.so
+lib64/libnfc-nci-44-551.so
+lib64/libnfc_nci_jni_44_551.so
+lib64/hw/nfc_nci.pn55x.default.so
 vendor/firmware/libpn548ad_fw.so
 vendor/firmware/libpn551_fw.so
 
