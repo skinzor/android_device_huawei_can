@@ -825,6 +825,8 @@ vendor/etc/libnfc_nxp_can.conf
 vendor/etc/nfcee_access.xml
 vendor/firmware/libpn548ad_fw.so
 vendor/firmware/libpn551_fw.so
+vendor/lib/mmi_nfc.so
+vendor/lib64/mmi_nfc.so
 
 # Perf
 bin/energy-awareness
