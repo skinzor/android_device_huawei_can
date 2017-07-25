@@ -155,6 +155,9 @@ TARGET_RECOVERY_FSTAB := $(PLATFORM_PATH)/rootdir/etc/fstab.qcom
 # RIL
 TARGET_RIL_VARIANT := caf
 
+# Root
+WITH_SU := true
+
 # CMHW
 BOARD_HARDWARE_CLASS := device/huawei/can/cmhw/src
 
