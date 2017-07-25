@@ -47,7 +47,10 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53
 
+TARGET_BOARD_SUFFIX := _64
 TARGET_USES_64_BIT_BINDER := true
+
+TARGET_CPU_CORTEX_A53 := true
 
 # Kernel
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 androidboot.bootdevice=7824900.sdhci androidboot.selinux=permissive
@@ -62,9 +65,6 @@ TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/huawei/msm8953
 TARGET_KERNEL_CONFIG := lineage_can_defconfig
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
-
-# QCOM hardware
-BOARD_USES_QCOM_HARDWARE := true
 
 # Audio
 AUDIO_FEATURE_ENABLED_COMPRESS_VOIP := true
@@ -121,6 +121,7 @@ ifeq ($(HOST_OS),linux)
 endif
 
 # FM
+BOARD_HAVE_QCOM_FM := true
 TARGET_QCOM_NO_FM_FIRMWARE := true
 
 # Keystore
@@ -137,6 +138,12 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3154116608
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 25782369792
 BOARD_FLASH_BLOCK_SIZE := 131072
 TARGET_USERIMAGES_USE_F2FS := true
+
+# Power
+TARGET_POWERHAL_VARIANT := qcom
+
+# QCOM hardware
+BOARD_USES_QCOM_HARDWARE := true
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(PLATFORM_PATH)/rootdir/etc/fstab.qcom
