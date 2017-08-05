@@ -814,6 +814,20 @@ vendor/lib/libconnctrl.so
 vendor/lib64/libconnctrl.so
 vendor/lib64/libQtiTether.so
 
+# NFC
+lib/libnfc-nci-44-551.so
+lib/libnfc_nci_jni_44_551.so
+lib64/libnfc-nci-44-551.so
+lib64/libnfc_nci_jni_44_551.so
+lib64/hw/nfc_nci.pn55x.default.so
+vendor/etc/libnfc_brcm_can.conf
+vendor/etc/libnfc_nxp_can.conf
+-vendor/etc/nfcee_access.xml
+vendor/firmware/libpn548ad_fw.so
+vendor/firmware/libpn551_fw.so
+vendor/lib/mmi_nfc.so
+vendor/lib64/mmi_nfc.so
+
 # Perf
 bin/energy-awareness
 bin/iop
