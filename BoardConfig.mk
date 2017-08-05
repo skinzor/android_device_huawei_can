@@ -63,9 +63,6 @@ TARGET_KERNEL_SOURCE := kernel/huawei/msm8953
 TARGET_KERNEL_CONFIG := lineage_can_defconfig
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 
-# QCOM hardware
-BOARD_USES_QCOM_HARDWARE := true
-
 # Audio
 AUDIO_FEATURE_ENABLED_COMPRESS_VOIP := true
 AUDIO_FEATURE_ENABLED_DS2_DOLBY_DAP := true
@@ -94,6 +91,9 @@ USE_DEVICE_SPECIFIC_CAMERA := true
 
 # Charger
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
+
+# CMHW
+BOARD_HARDWARE_CLASS := device/huawei/can/cmhw/src
 
 # Crypto
 TARGET_HW_DISK_ENCRYPTION := true
@@ -137,14 +137,14 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 25782369792
 BOARD_FLASH_BLOCK_SIZE := 131072
 TARGET_USERIMAGES_USE_F2FS := true
 
+# QCOM hardware
+BOARD_USES_QCOM_HARDWARE := true
+
 # Recovery
 TARGET_RECOVERY_FSTAB := $(PLATFORM_PATH)/rootdir/etc/fstab.qcom
 
 # RIL
 TARGET_RIL_VARIANT := caf
-
-# CMHW
-BOARD_HARDWARE_CLASS := device/huawei/can/cmhw/src
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
