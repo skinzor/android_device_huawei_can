@@ -97,6 +97,10 @@ BOARD_CHARGER_DISABLE_INIT_BLANK := true
 # CMHW
 BOARD_HARDWARE_CLASS := device/huawei/can/cmhw/src
 
+# CNE / DPM
+BOARD_USES_QCNE := true
+TARGET_LDPRELOAD := libNimsWrap.so
+
 # Crypto
 TARGET_HW_DISK_ENCRYPTION := true
 
