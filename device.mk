@@ -90,6 +90,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libshim_cutils
 
+# Dataservice
+PRODUCT_PACKAGES += \
+    rmnetcli
+
 # Display
 PRODUCT_PACKAGES += \
     copybit.msm8953 \
