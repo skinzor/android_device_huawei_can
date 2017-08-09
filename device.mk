@@ -114,7 +114,8 @@ PRODUCT_PACKAGES += \
 # IPv6
 PRODUCT_PACKAGES += \
     ebtables \
-    ethertypes
+    ethertypes \
+    libebtc
 
 # IRQ
 PRODUCT_COPY_FILES += \
@@ -149,7 +150,7 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/capability.xml:system/etc/capability.xml \
+    $(LOCAL_PATH)/configs/capability.xml:system/etc/capability.xml
 
 # NFC
 PRODUCT_COPY_FILES += \
@@ -163,7 +164,7 @@ PRODUCT_PACKAGES += \
     libnfc-nci \
     nfc_nci.pn54x.default \
     NfcNci \
-    Tag \
+    Tag
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/nfc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
