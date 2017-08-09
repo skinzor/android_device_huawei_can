@@ -108,8 +108,10 @@ PRODUCT_PACKAGES += \
 
 # FM
 PRODUCT_PACKAGES += \
-	FMRadio \
-	libfmjni
+    FM2 \
+    libfmjni \
+    libqcomfm_jni \
+    qcom.fmradio
 
 # IPv6
 PRODUCT_PACKAGES += \

@@ -126,6 +126,7 @@ ifeq ($(HOST_OS),linux)
 endif
 
 # FM
+AUDIO_FEATURE_ENABLED_FM_POWER_OPT := true
 BOARD_HAVE_QCOM_FM := true
 TARGET_QCOM_NO_FM_FIRMWARE := true
 
