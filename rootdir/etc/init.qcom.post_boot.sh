@@ -1317,6 +1317,9 @@ case "$target" in
 	esac
         echo 0 > /sys/module/process_reclaim/parameters/enable_process_reclaim
         echo 0 > /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk
+        echo 20 > /proc/sys/vm/dirty_ratio
+        echo 6759 > /proc/sys/vm/min_free_kbytes
+        echo 61440 > /proc/sys/vm/extra_free_kbytes
 	;;
 esac
 
