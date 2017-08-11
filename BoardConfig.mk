@@ -126,6 +126,7 @@ ifeq ($(HOST_OS),linux)
 endif
 
 # Filesystem
+BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
