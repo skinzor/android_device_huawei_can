@@ -1,0 +1,23 @@
+From 4ca7514038a92a3daf9513ccd564359d43cebafb Mon Sep 17 00:00:00 2001
+From: "#Henkate @xda" <robertpopescu95@yahoo.com>
+Date: Sat, 12 Aug 2017 15:21:27 +0300
+Subject: [PATCH] Fix drag-n-drop on Paged mode drawer.
+
+https://github.com/SlimRoms/packages_apps_SlimLauncher/issues/3
+---
+ src/com/android/launcher3/allapps/paged/AppsCustomizePagedView.java | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/com/android/launcher3/allapps/paged/AppsCustomizePagedView.java b/src/com/android/launcher3/allapps/paged/AppsCustomizePagedView.java
+index 631c3eac0..4e0b4e825 100644
+--- a/src/com/android/launcher3/allapps/paged/AppsCustomizePagedView.java
++++ b/src/com/android/launcher3/allapps/paged/AppsCustomizePagedView.java
+@@ -682,7 +682,7 @@ public boolean onLongClick(View v) {
+                 mLauncher.getWorkspace().isSwitchingState()) return false;
+         // Return if global dragging is not enabled
+ 
+-        return !mLauncher.isDraggingEnabled() && beginDragging(v);
++        return beginDragging(v);
+     }
+ 
+     /*
