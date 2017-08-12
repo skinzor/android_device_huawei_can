@@ -1,4 +1,5 @@
-# Copyright (C) 2017 The LineageOS Project
+#
+# Copyright 2015 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -11,18 +12,28 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+#
 
-# Inherit from those products. Most specific first.
+# Sample: This is where we'd set a backup provider if we had one
+# $(call inherit-product, device/sample/products/backup_overlay.mk)
+
+# Release name
+PRODUCT_RELEASE_NAME := can
+
+# Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
-# Inherit from can device.
+# Inherit some common Slim stuff.
+$(call inherit-product, vendor/slim/config/common_full_phone.mk)
+
+# Enhanced NFC
+$(call inherit-product, vendor/slim/config/nfc_enhanced.mk)
+
+# Inherit device configuration
 $(call inherit-product, device/huawei/can/device.mk)
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/cm/config/common_full_phone.mk)
-
-PRODUCT_NAME := lineage_can
+PRODUCT_NAME := slim_can
 PRODUCT_DEVICE := can
 PRODUCT_BRAND := HUAWEI
 PRODUCT_MODEL := HUAWEI CAN-L11
