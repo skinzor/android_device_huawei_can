@@ -107,9 +107,9 @@ PRODUCT_PACKAGES += \
     fingerprintd
 
 # FM
-PRODUCT_PACKAGES += \
-    FMRadio \
-    libfmjni
+#PRODUCT_PACKAGES += \
+#    FMRadio \
+#    libfmjni
 
 # IPv6
 PRODUCT_PACKAGES += \
