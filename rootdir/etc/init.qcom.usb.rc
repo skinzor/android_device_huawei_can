@@ -364,55 +364,6 @@ on property:sys.usb.config=rndis,serial,adb
     start test_diag
     setprop sys.usb.state ${sys.usb.config}
 
-# USB Hisutie mode configuration
-on property:sys.usb.config=hisuite,mtp,mass_storage
-    write /sys/class/android_usb/android0/enable 0
-    write /sys/class/android_usb/android0/idVendor 12d1
-    write /sys/class/android_usb/android0/idProduct 1082
-    write /sys/class/android_usb/android0/iSerial ${ro.serialno}
-    write /sys/class/android_usb/android0/f_mass_storage/lun/file /system/cdrom/autorun.iso
-    write /sys/class/android_usb/android0/functions mtp,mass_storage
-    write /sys/class/android_usb/android0/enable 1
-    setprop sys.usb.state ${sys.usb.config}
-
-on property:sys.usb.config=hisuite,mtp,mass_storage,adb
-    stop adbd
-    write /sys/class/android_usb/android0/enable 0
-    write /sys/class/android_usb/android0/idVendor 12d1
-    write /sys/class/android_usb/android0/idProduct 107d
-    write /sys/class/android_usb/android0/iSerial ${ro.serialno}
-    write /sys/class/android_usb/android0/f_mass_storage/lun/file /system/cdrom/autorun.iso
-    write /sys/class/android_usb/android0/functions mtp,mass_storage,adb
-    write /sys/class/android_usb/android0/enable 1
-    start adbd
-    setprop sys.usb.state ${sys.usb.config}
-
-on property:sys.usb.config=hisuite,mtp,mass_storage,hdb
-    stop hdbd
-    write /sys/class/android_usb/android0/enable 0
-    write /sys/class/android_usb/android0/idVendor 12d1
-    write /sys/class/android_usb/android0/idProduct 107d
-    write /sys/class/android_usb/android0/iSerial ${ro.serialno}
-    write /sys/class/android_usb/android0/f_mass_storage/lun/file /system/cdrom/autorun.iso
-    write /sys/class/android_usb/android0/functions mtp,mass_storage,hdb
-    write /sys/class/android_usb/android0/enable 1
-    start hdbd
-    setprop sys.usb.state ${sys.usb.config}
-
-on property:sys.usb.config=hisuite,mtp,mass_storage,adb,hdb
-    stop adbd
-    stop hdbd
-    write /sys/class/android_usb/android0/enable 0
-    write /sys/class/android_usb/android0/idVendor 12d1
-    write /sys/class/android_usb/android0/idProduct 107d
-    write /sys/class/android_usb/android0/iSerial ${ro.serialno}
-    write /sys/class/android_usb/android0/f_mass_storage/lun/file /system/cdrom/autorun.iso
-    write /sys/class/android_usb/android0/functions mtp,mass_storage,adb,hdb
-    write /sys/class/android_usb/android0/enable 1
-    start adbd
-    start hdbd
-    setprop sys.usb.state ${sys.usb.config}
-
 # adb only USB configuration
 # This is the fallback configuration if the
 # USB manager fails to set a standard configuration
