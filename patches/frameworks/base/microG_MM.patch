@@ -1,6 +1,6 @@
-From e6ab8a7c51e0b649ce9563a029f2c55ad932f17f Mon Sep 17 00:00:00 2001
+From 43f3987017f5af9e3e09fbc8f5b8fe7fd1fcefe1 Mon Sep 17 00:00:00 2001
 From: "#Henkate @xda" <robertpopescu95@yahoo.com>
-Date: Fri, 11 Aug 2017 18:48:30 +0300
+Date: Thu, 14 Sep 2017 17:05:48 +0300
 Subject: [PATCH 1/3] microG support [1/3]
 
 ---
@@ -8,7 +8,7 @@ Subject: [PATCH 1/3] microG support [1/3]
  1 file changed, 7 insertions(+)
 
 diff --git a/core/res/AndroidManifest.xml b/core/res/AndroidManifest.xml
-index 84c3a9c17cd..b35161eab2a 100644
+index 0170305ffe8b..625f48e48964 100644
 --- a/core/res/AndroidManifest.xml
 +++ b/core/res/AndroidManifest.xml
 @@ -1665,6 +1665,13 @@
@@ -26,9 +26,9 @@ index 84c3a9c17cd..b35161eab2a 100644
           {@link android.content.pm.PackageManager#addPackageToPreferred}
           for details. -->
 
-From a45c1a29db1085c97d0fdced06c80a3b3c23e9e0 Mon Sep 17 00:00:00 2001
+From 6183f1d0e71b70040226741f44f497a1fd072b6d Mon Sep 17 00:00:00 2001
 From: "#Henkate @xda" <robertpopescu95@yahoo.com>
-Date: Fri, 11 Aug 2017 18:49:15 +0300
+Date: Thu, 14 Sep 2017 17:10:01 +0300
 Subject: [PATCH 2/3] microG support [2/3]
 
 ---
@@ -36,7 +36,7 @@ Subject: [PATCH 2/3] microG support [2/3]
  1 file changed, 5 insertions(+)
 
 diff --git a/core/res/res/values/cm_strings.xml b/core/res/res/values/cm_strings.xml
-index a8fcbe52024..45e843c19e8 100644
+index a8fcbe520242..45e843c19e81 100644
 --- a/core/res/res/values/cm_strings.xml
 +++ b/core/res/res/values/cm_strings.xml
 @@ -45,6 +45,11 @@
@@ -52,9 +52,9 @@ index a8fcbe52024..45e843c19e8 100644
      <string name="permlab_setKeyguardWallpaper">set keyguard wallpaper</string>
      <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
 
-From 0cc05dc4b7f06029bda393a0e8ea6b1c5bc239a5 Mon Sep 17 00:00:00 2001
+From 53262ebd957494a05a59f02cec17d726c3c6d539 Mon Sep 17 00:00:00 2001
 From: "#Henkate @xda" <robertpopescu95@yahoo.com>
-Date: Fri, 11 Aug 2017 18:49:51 +0300
+Date: Thu, 14 Sep 2017 17:12:01 +0300
 Subject: [PATCH 3/3] microG support [3/3]
 
 ---
@@ -62,10 +62,10 @@ Subject: [PATCH 3/3] microG support [3/3]
  1 file changed, 21 insertions(+), 2 deletions(-)
 
 diff --git a/services/core/java/com/android/server/pm/PackageManagerService.java b/services/core/java/com/android/server/pm/PackageManagerService.java
-index 21d3b4be1f5..089f03c9989 100644
+index 9c8d8b9b5bba..246a81dc9d58 100644
 --- a/services/core/java/com/android/server/pm/PackageManagerService.java
 +++ b/services/core/java/com/android/server/pm/PackageManagerService.java
-@@ -2824,8 +2824,27 @@ PackageInfo generatePackageInfo(PackageParser.Package p, int flags, int userId)
+@@ -2820,8 +2820,27 @@ PackageInfo generatePackageInfo(PackageParser.Package p, int flags, int userId)
          final Set<String> permissions = permissionsState.getPermissions(userId);
          final PackageUserState state = ps.readUserState(userId);
  
