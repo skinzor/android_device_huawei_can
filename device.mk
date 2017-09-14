@@ -108,11 +108,9 @@ PRODUCT_PACKAGES += \
     fingerprintd
 
 # FM
-PRODUCT_PACKAGES += \
-    FM2 \
-    libfmjni \
-    libqcomfm_jni \
-    qcom.fmradio
+#PRODUCT_PACKAGES += \
+#    FMRadio \
+#    libfmjni
 
 # IPv6
 PRODUCT_PACKAGES += \
