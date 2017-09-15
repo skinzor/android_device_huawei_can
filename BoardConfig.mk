@@ -160,6 +160,9 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 # Power
 TARGET_POWERHAL_VARIANT := qcom
 
+# QCOM hardware
+BOARD_USES_QCOM_HARDWARE := true
+
 # Recovery
 TARGET_RECOVERY_FSTAB := $(PLATFORM_PATH)/rootdir/etc/fstab.qcom
 
