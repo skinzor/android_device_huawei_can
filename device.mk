@@ -245,7 +245,8 @@ PRODUCT_PACKAGES += \
     sensors.nosensorhub.wrapper
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/sensors/hals.conf:system/etc/sensors/hals.conf
+    $(LOCAL_PATH)/configs/sensors/hals.conf:system/etc/sensors/hals.conf \
+    $(LOCAL_PATH)/configs/calmodule.cfg:system/vendor/etc/calmodule.cfg
 
 # Wifi
 PRODUCT_PACKAGES += \
