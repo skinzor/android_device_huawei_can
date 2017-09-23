@@ -41,6 +41,11 @@ audio.pp.asphere.enabled=false
 bluetooth.hfp.client=1
 ro.bt.bdaddr_path=/data/misc/bluedroid/macbt
 
+# CABL
+ro.qualcomm.cabl=2
+config.cabl.xml=1
+config.cabl.path=/system/etc/cablconfig.xml
+
 # Camera
 camera.lowpower.record.enable=1
 camera.display.umax=1920x1080
