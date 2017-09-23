@@ -103,6 +103,10 @@ PRODUCT_PACKAGES += \
     memtrack.msm8953 \
     libtinyxml
 
+# DRM
+PRODUCT_PACKAGES += \
+    libprotobuf-cpp-lite
+
 # Fingerprint
 PRODUCT_PACKAGES += \
     fingerprintd
